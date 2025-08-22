@@ -34,7 +34,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             /* Added for the rolling/parallax effect */
-        } 
+        }
 
         /* Background image */
         .bg-about {
@@ -281,7 +281,6 @@
             justify-content: center;
             text-align: center;
             /* Ensure text is centered */
-            transition: opacity 0.7s ease-in-out;
             /* Smooth fade for carousel items */
         }
 
@@ -439,11 +438,11 @@
             transform: translateX(0);
             /* Slide in */
         }
-        
+
         .bg {
-                background-color: rgba(19, 19, 19, 0.7);
-                /* 10% opacity black */
-            }
+            background-color: rgba(19, 19, 19, 0.7);
+            /* 10% opacity black */
+        }
     </style>
 </head>
 
@@ -465,16 +464,13 @@
             <nav class="hidden md:flex space-x-8">
                 <a href="#hero"
                     class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
-                <a href="solutions.html"
-                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
                 <a href="about-us.html"
                     class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">ABOUT
                     US</a>
-                <a href="#mission-vision"
-                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">MISSION
-                    & VISION</a>
-                <a href="#partners"
-                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">PARTNERS</a>
+                <a href="solutions.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
+                <a href="services.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SERVICES</a>
                 <a href="contact-us.html"
                     class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">CONTACT</a>
             </nav>
@@ -500,16 +496,13 @@
             <nav class="flex flex-col space-y-6">
                 <a href="#hero"
                     class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
-                <a href="solutions.html"
-                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
                 <a href="about-us.html"
                     class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">ABOUT
                     US</a>
-                <a href="#mission-vision"
-                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">MISSION
-                    & VISION</a>
-                <a href="#partners"
-                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">PARTNERS</a>
+                <a href="solutions.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
+                <a href="services.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SERVICES</a>
                 <a href="contact-us.html"
                     class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">CONTACT</a>
             </nav>
@@ -520,44 +513,46 @@
         <!-- Hero Section -->
         <section id="hero" class="relative h-screen flex items-center text-white overflow-hidden px-4 sm:px-6 lg:px-8">
 
-    <!-- Background Video -->
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-      <source src="assets/videoplayback.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+            <!-- Background Video -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="assets/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
 
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 overlay-hero-gradient z-10"></div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 overlay-hero-gradient z-10"></div>
 
-    <!-- Hero Content -->
-    <div class="container ml-4 md:ml-12 lg:ml-20 relative z-20 py-16 text-left max-w-2xl">
-      <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 leading-tight drop-shadow-lg animate-fade-in-down whitespace-nowrap">
-        WELCOME TO NCONNECT SOLUTION !!
-      </h1>
-      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-red-400 drop-shadow-md animate-fade-in-up">
-        Focus on business, <span class="text-white">we handle IT</span>
-      </h2>
-      <div class="flex flex-col items-start space-y-3 mb-10 text-xs sm:text-sm md:text-base font-medium">
-        <p class="text-white transition duration-300 animate-fade-in">Infrastructure and Networking</p>
-        <p class="text-white transition duration-300 animate-fade-in delay-100">Datacenter Solutions</p>
-        <p class="text-white transition duration-300 animate-fade-in delay-200">Managed IT Services</p>
-        <p class="text-white transition duration-300 animate-fade-in delay-300">Cloud Computing</p>
-        <p class="text-white transition duration-300 animate-fade-in delay-400">Security & Compliance</p>
-        <p class="text-white transition duration-300 animate-fade-in delay-500">Contract Renewals</p>
-      </div>
-      <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6">
-        <button onclick="window.location.href='about-us.html'"
-          class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-600">
-          KNOW MORE
-        </button>
-        <button onclick="window.location.href='contact-us.html'"
-          class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-700">
-          CONTACT US
-        </button>
-      </div>
-    </div>
+            <!-- Hero Content -->
+            <div class="container ml-4 md:ml-12 lg:ml-20 relative z-20 py-16 text-left max-w-2xl">
+                <h1
+                    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 leading-tight drop-shadow-lg animate-fade-in-down whitespace-nowrap">
+                    WELCOME TO NCONNECT SOLUTION !!
+                </h1>
+                <h2
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-red-400 drop-shadow-md animate-fade-in-up">
+                    Focus on business, <span class="text-white">we handle IT</span>
+                </h2>
+                <div class="flex flex-col items-start space-y-3 mb-10 text-xs sm:text-sm md:text-base font-medium">
+                    <p class="text-white transition duration-300 animate-fade-in">Infrastructure and Networking</p>
+                    <p class="text-white transition duration-300 animate-fade-in delay-100">Datacenter Solutions</p>
+                    <p class="text-white transition duration-300 animate-fade-in delay-200">Managed IT Services</p>
+                    <p class="text-white transition duration-300 animate-fade-in delay-300">Cloud Computing</p>
+                    <p class="text-white transition duration-300 animate-fade-in delay-400">Security & Compliance</p>
+                    <p class="text-white transition duration-300 animate-fade-in delay-500">Contract Renewals</p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+                    <button onclick="window.location.href='about-us.html'"
+                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-600">
+                        KNOW MORE
+                    </button>
+                    <button onclick="window.location.href='contact-us.html'"
+                        class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-700">
+                        CONTACT US
+                    </button>
+                </div>
+            </div>
 
-  </section>
+        </section>
 
         <!-- Solutions Section -->
         <section id="solutions" class="py-16 md:py-24 lg:py-32 bg-gray-50 section-animate px-4 sm:px-6 lg:px-8">
@@ -667,9 +662,8 @@
                     <!-- Mission -->
                     <div
                         class="flex flex-col items-center bg-gray-50 p-8 sm:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
-                        <img src="https://img.freepik.com/premium-photo/businessman-clicks-virtual-screen-mission_1085052-765.jpg"
-                            alt="Mission Icon"
-                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4 border-red-500">
+                        <img src="assets/mission.jpg" alt="Mission Icon"
+                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4">
                         <div class="text-center">
                             <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Mission</h3>
                             <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">To deliver cutting-edge
@@ -683,9 +677,8 @@
                     <!-- Vision -->
                     <div
                         class="flex flex-col items-center bg-gray-50 p-8 sm:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt4ZzqxrAbrgSHY0CXc-wvPxf70bPPOW_njg&s"
-                            alt="Vision Icon"
-                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4 border-red-500">
+                        <img src="assets/vission.jpg" alt="Vision Icon"
+                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4">
                         <div class="text-center">
                             <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Vision</h3>
                             <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">To be the leading IT
@@ -712,133 +705,131 @@
                         <!-- Partner Carousel Items -->
                         <div class="carousel-item active" data-slide="0">
                             <div class="partner-logo-wrapper"><img src="assets/hp.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/cisco.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/IBM.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/Dell.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/nutanix.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/images.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/ruckus.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/Cambium.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/cab.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/download.jpeg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/hpe_greenlake_grn_pos_rgb.png"
-                                    alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    alt="Partner Logo" class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/HP_Logo_OT_email.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
 
                         </div>
                         <div class="carousel-item" data-slide="1">
                             <div class="partner-logo-wrapper"><img src="assets/hpe.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/lenovo.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/Forcepoint.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/veeam.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/Veritas.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img
                                     src="assets/74dc3a5a84b8b32bc3b6e1c465c3e6_1657327796.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/quantum.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/netgear.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/tplink.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
 
                         </div>
                         <div class="carousel-item" data-slide="2">
                             <div class="partner-logo-wrapper"><img src="assets/fortinet.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/nettap.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/netapp.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/legrand.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/rit.jpg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/ruijie.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/3.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/1.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/2.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
 
                         </div>
                         <div class="carousel-item active" data-slide="3">
                             <div class="partner-logo-wrapper"><img src="assets/download.jpeg" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/hpe_greenlake_grn_pos_rgb.png"
-                                    alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    alt="Partner Logo" class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/HP_Logo_OT_email.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/4.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/5.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/6.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/axis.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/hikvision.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                             <div class="partner-logo-wrapper"><img src="assets/7.png" alt="Partner Logo"
-                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                                    class="w-full h-auto max-h-20 object-contain transition">
                             </div>
                         </div>
                     </div>
@@ -851,7 +842,7 @@
                     <span class="carousel-dot" data-slide="2"></span>
                     <span class="carousel-dot" data-slide="3"></span>
                 </div>
-                
+
                 </br>
             </div>
         </section>
@@ -933,39 +924,25 @@
                 <!-- Let's Talk Column -->
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-gray-900">LET'S TALK</h2>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">Corporate Office</h3>
-                    <p class="text-gray-700 mb-2">The Jewel Building, Roxy Chambers</p>
-                    <p class="text-700 mb-2">1st Floor, Office No- 109,</p>
-                    <p class="text-gray-700 mb-2">Charni Road(E), Opera House,</p>
-                    <p class="text-gray-700 mb-6 md:mb-8">Girgaon, Mumbai-400004</p>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">Registered Office</h3>
+                    <p class="text-gray-700 mb-2">Plot-27, Hanuman Terrace, 11-A, 1st Floor</p>
+                    <p class="text-gray-700 mb-2">Grant Road, Mumbai</p>
+                    <p class="text-gray-700 mb-2">Maharashtra, India – 400007</p>
 
+                    <!-- Corporate Office -->
+                    <h3 class="text-xl md:text-2xl font-semibold mt-6 mb-4 text-gray-800">Corporate Office</h3>
+                    <p class="text-gray-700 mb-2">709, Damji Shamji Business Galleria</p>
+                    <p class="text-gray-700 mb-2">Above D-Mart, L.B.S. Marg</p>
+                    <p class="text-gray-700 mb-2">Kanjurmarg (W), Mumbai – 400078</p>
+                    <br />
                     <p class="text-gray-700 mb-2"><strong>Phone:</strong> <a href="tel:+919920387641"
                             class="text-red-600 hover:underline transition duration-200">(+91) 9920387641</a></p>
                     <p class="text-gray-700 mb-6 md:mb-8"><strong>Email:</strong> <a
-                            href="mailto:info@nconnectsolution.com"
-                            class="text-red-600 hover:underline transition duration-200">info@nconnectsolution.com</a> |
-                        <a href="mailto:info@nconnectsolution.com"
-                            class="text-red-600 hover:underline transition duration-200">info@nconnectsolution.com</a>
+                            href="mailto:sales@nconnectsolution.com"
+                            class="text-red-600 hover:underline transition duration-200">sales@nconnectsolution.com</a>
                     </p>
 
-                    <div class="flex space-x-6 mt-6 md:mt-8">
-                        <a href="#"
-                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                            <i class="fab fa-twitter text-3xl"></i>
-                        </a>
-                        <a href="#"
-                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                            <i class="fab fa-instagram text-3xl"></i>
-                        </a>
-                        <a href="#"
-                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                            <i class="fab fa-facebook-f text-3xl"></i>
-                        </a>
-                        <a href="#"
-                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                            <i class="fab fa-linkedin-in text-3xl"></i>
-                        </a>
-                    </div>
+
                 </div>
 
                 <!-- Contact Us Form Column -->
@@ -976,46 +953,63 @@
                             <!-- First Name and Last Name -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                    <input type="text" id="first-name" name="from_first_name" autocomplete="given-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First
+                                        Name</label>
+                                    <input type="text" id="first-name" name="from_first_name" autocomplete="given-name"
+                                        required
+                                        class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
                                 </div>
                                 <div>
-                                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                    <input type="text" id="last-name" name="from_last_name" autocomplete="family-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last
+                                        Name</label>
+                                    <input type="text" id="last-name" name="from_last_name" autocomplete="family-name"
+                                        required
+                                        class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
                                 </div>
                             </div>
 
                             <!-- Email and Phone Number -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                    <input type="email" id="email" name="from_email" autocomplete="email" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                    <label for="email"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="from_email" autocomplete="email" required
+                                        class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
                                 </div>
                                 <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                    <input type="tel" id="phone" name="from_phone" autocomplete="tel" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                                        Number</label>
+                                    <input type="tel" id="phone" name="from_phone" autocomplete="tel" required
+                                        class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
                                 </div>
                             </div>
 
                             <!-- Company Name -->
                             <div>
-                                <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                                <input type="text" id="company-name" name="from_company" autocomplete="organization" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1">Company
+                                    Name</label>
+                                <input type="text" id="company-name" name="from_company" autocomplete="organization"
+                                    class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
                             </div>
 
                             <!-- Message -->
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea id="message" name="from_message" rows="5" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200"></textarea>
+                                <label for="message"
+                                    class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="from_message" rows="5" required
+                                    class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200"></textarea>
                             </div>
-                            
+
                             <!-- Submit Button -->
                             <div class="text-center">
-                                <button type="submit" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-12 rounded-full shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">SEND MESSAGE</button>
+                                <button type="submit"
+                                    class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-12 rounded-full shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">SEND
+                                    MESSAGE</button>
                             </div>
                         </form>
                         <!-- Confirmation Message Box -->
-                        <div id="confirmation-message" class="hidden mt-6 text-center text-green-600 font-semibold p-4 rounded-lg bg-green-50 border border-green-200">
+                        <div id="confirmation-message"
+                            class="hidden mt-6 text-center text-green-600 font-semibold p-4 rounded-lg bg-green-50 border border-green-200">
                             Thank you for your message! We will get back to you shortly.
                         </div>
                     </div>
@@ -1030,7 +1024,8 @@
             <!-- Company Info -->
             <div class="md:col-span-2">
                 <img src="assets/logo.png" alt="NConnect Logo" class="h-14 w-auto mb-4">
-                <p class="text-sm leading-relaxed max-w-sm">NConnect Solution is a premier IT solutions provider
+                <p class="text-sm leading-relaxed max-w-sm">NCONNECT SOLUTION SYSTEMS PRIVATE LIMITED is a premier IT
+                    solutions provider
                     dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of
                     services, from infrastructure and networking to cloud computing and security.</p>
             </div>
@@ -1040,6 +1035,7 @@
                 <nav class="space-y-2 text-sm">
                     <a href="index.html#hero" class="block hover:text-red-400 transition duration-200">Home</a>
                     <a href="solutions.html" class="block hover:text-red-400 transition duration-200">Solutions</a>
+                    <a href="services.html" class="block hover:text-red-400 transition duration-200">Services</a>
                     <a href="about-us.html" class="block hover:text-red-400 transition duration-200">About Us</a>
                     <a href="contact-us.html" class="block hover:text-red-400 transition duration-200">Contact</a>
                 </nav>
@@ -1050,19 +1046,37 @@
                 <div class="space-y-3 text-sm">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-map-marker-alt text-red-500"></i>
-                        <span>123 IT Solutions, Tech Park, City, Country</span>
+                        <span>Registered Address - Plot-27 Hanuman Terrace, 11-a,1st Flr, Grant Road, Mumbai, Mumbai,
+                            Maharashtra, India, 400007
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-red-500"></i><span> Corporates Address - 709, Damji Shamji
+                            Business Galleria,
+                            Above D-Mart, L.B.S. Marg,
+                            Kanjurmarg(W), Mumbai-400 078</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-envelope text-red-500"></i>
-                        <a href="mailto:info@nconnect.com" class="hover:text-red-400">info@nconnect.com</a>
+                        <a href="mailto:sales@nconnectsolution.com"
+                            class="hover:text-red-400">sales@nconnectsolution.com</a>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone-alt text-red-500"></i>
-                        <span>+1 234 567 890</span>
+                        <span>+91 9920387641</span>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <i class="fab fa-linkedin text-red-500"></i>
-                        <a href="https://linkedin.com" target="_blank" class="hover:text-red-400">NConnect Solution</a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1075,182 +1089,253 @@
 
 
     <script>
-    // JavaScript for scroll-triggered animations and carousel logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('.section-animate');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        // JavaScript for scroll-triggered animations and carousel logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-animate');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        // Observer for section animations and active navigation links
-        const observerOptions = {
-            root: null,
-            rootMargin: '-50% 0px -50% 0px',
-            threshold: 0
-        };
+            // Observer for section animations and active navigation links
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
 
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
 
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                    mobileNavLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                        mobileNavLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
             });
-        }, observerOptions);
 
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-
-        // Hamburger menu toggle logic
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            hamburgerIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                hamburgerIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
+            // Hamburger menu toggle logic
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
             });
-        });
 
-        // Partner Logo Carousel Logic
-        const partnerCarousel = document.getElementById('partner-carousel');
-        const partnerCarouselItems = partnerCarousel ? partnerCarousel.querySelectorAll('.carousel-item') : [];
-        const partnerCarouselDotsContainer = document.getElementById('partner-dots');
-        const partnerCarouselDots = partnerCarouselDotsContainer ? partnerCarouselDotsContainer.querySelectorAll('.carousel-dot') : [];
-        let currentPartnerSlide = 0;
-        let partnerInterval;
-
-        function showPartnerSlide(index) {
-            if (partnerCarouselItems.length === 0) return;
-
-            partnerCarouselItems.forEach(item => {
-                item.classList.remove('active');
-                item.querySelectorAll('.logo-animate').forEach(img => img.classList.remove('is-visible'));
-            });
-            partnerCarouselDots.forEach(dot => dot.classList.remove('active'));
-
-            partnerCarouselItems[index].classList.add('active');
-            partnerCarouselDots[index].classList.add('active');
-            partnerCarouselItems[index].querySelectorAll('.logo-animate').forEach(img => img.classList.add('is-visible'));
-
-            setTimeout(() => {
-                partnerCarousel.style.height = partnerCarouselItems[index].offsetHeight + 'px';
-            }, 50);
-        }
-
-        function nextPartnerSlide() {
-            currentPartnerSlide = (currentPartnerSlide + 1) % partnerCarouselItems.length;
-            showPartnerSlide(currentPartnerSlide);
-        }
-
-        function startPartnerCarousel() {
-            if (partnerCarouselItems.length > 1) {
-                partnerInterval = setInterval(nextPartnerSlide, 3000);
-            }
-        }
-
-        function stopPartnerCarousel() {
-            clearInterval(partnerInterval);
-        }
-
-        partnerCarouselDots.forEach(dot => {
-            dot.addEventListener('click', function () {
-                stopPartnerCarousel();
-                currentPartnerSlide = parseInt(this.dataset.slide);
-                showPartnerSlide(currentPartnerSlide);
-                startPartnerCarousel();
-            });
-        });
-
-        if (partnerCarouselItems.length > 0) {
-            showPartnerSlide(currentPartnerSlide);
-            startPartnerCarousel();
-        }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (mobileMenu.classList.contains('open')) {
+            // Close mobile menu when a link is clicked
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
                     mobileMenu.classList.remove('open');
                     hamburgerIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
                     document.body.classList.remove('overflow-hidden');
-                }
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
                 });
+            });
+
+            // Partner Logo Carousel Logic
+            const partnerCarousel = document.getElementById('partner-carousel');
+            const partnerCarouselItems = partnerCarousel ? partnerCarousel.querySelectorAll('.carousel-item') : [];
+            const partnerCarouselDotsContainer = document.getElementById('partner-dots');
+            const partnerCarouselDots = partnerCarouselDotsContainer ? partnerCarouselDotsContainer.querySelectorAll('.carousel-dot') : [];
+            let currentPartnerSlide = 0;
+            let partnerInterval;
+
+            function showPartnerSlide(index) {
+                if (partnerCarouselItems.length === 0) return;
+
+                partnerCarouselItems.forEach((item, i) => {
+                    const isActive = i === index;
+
+                    // Toggle active class
+                    item.classList.toggle('active', isActive);
+
+                    // Smooth fade logic
+                    item.style.opacity = isActive ? '1' : '0';
+                    item.style.visibility = isActive ? 'visible' : 'hidden';
+                    item.style.zIndex = isActive ? '1' : '0';
+                    item.style.position = isActive ? 'relative' : 'absolute';
+
+                    // Animate logos
+                    item.querySelectorAll('.logo-animate').forEach(img => {
+                        img.classList.toggle('is-visible', isActive);
+                    });
+                });
+
+                // Update dots
+                partnerCarouselDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+
+            function nextPartnerSlide() {
+                currentPartnerSlide = (currentPartnerSlide + 1) % partnerCarouselItems.length;
+                showPartnerSlide(currentPartnerSlide);
+            }
+
+            function startPartnerCarousel() {
+                if (partnerCarouselItems.length > 1) {
+                    partnerInterval = setInterval(nextPartnerSlide, 3000);
+                }
+            }
+
+            function stopPartnerCarousel() {
+                clearInterval(partnerInterval);
+            }
+
+            partnerCarouselDots.forEach(dot => {
+                dot.addEventListener('click', function () {
+                    stopPartnerCarousel();
+                    currentPartnerSlide = parseInt(this.dataset.slide);
+                    showPartnerSlide(currentPartnerSlide);
+                    startPartnerCarousel();
+                });
+            });
+
+            if (partnerCarouselItems.length > 0) {
+                showPartnerSlide(currentPartnerSlide);
+                startPartnerCarousel();
+            }
+            // First-visit logic
+            if (!getCookie("nconnect_visited")) {
+                // No cookie = first landing
+                setCookie("nconnect_visited", "true", 365);
+
+                // Show the banner on first visit
+                const banner = document.getElementById("cookie-banner");
+                banner.classList.remove("hidden");
+            }
+
+            // Dismiss banner on user acceptance
+            document.getElementById("cookie-accept").addEventListener("click", () => {
+                setCookie("nconnect_cookies_accepted", "true", 365);
+                document.getElementById("cookie-banner").style.display = "none";
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // EmailJS integration
+            emailjs.init('8GPPjcdODiUdEwMb7');
+
+            const contactForm = document.getElementById('contact-form');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+
+                const serviceID = 'service_vfoj3pg';
+                const templateID = 'template_aukpv3w';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        console.log('Email sent successfully!');
+                        contactForm.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
+
+                        setTimeout(() => {
+                            confirmationMessage.style.display = 'none';
+                            contactForm.style.display = 'block';
+                            contactForm.reset();
+                            submitButton.textContent = 'SEND MESSAGE';
+                            submitButton.disabled = false;
+                        }, 5000);
+                    })
+                    .catch((err) => {
+                        console.error('Email failed to send:', err);
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.textContent = 'Sorry, something went wrong. Please try again later.';
+                        confirmationMessage.classList.remove('text-green-600', 'bg-green-50');
+                        confirmationMessage.classList.add('text-red-600', 'bg-red-50');
+
+                        submitButton.textContent = 'SEND MESSAGE';
+                        submitButton.disabled = false;
+                    });
             });
         });
 
-        // EmailJS integration
-        emailjs.init('8GPPjcdODiUdEwMb7');
+        // Cookie utility functions
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = `${name}=${value || ""}${expires}; path=/`;
+        }
 
-        const contactForm = document.getElementById('contact-form');
-        const confirmationMessage = document.getElementById('confirmation-message');
-        const submitButton = contactForm.querySelector('button[type="submit"]');
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            return document.cookie.split(";").reduce((prev, c) => {
+                c = c.trim();
+                return c.indexOf(nameEQ) === 0 ? c.substring(nameEQ.length) : prev;
+            }, null);
+        }
 
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+    </script>
+    <!-- Cookie Consent Banner -->
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner"
+        class="fixed bottom-0 inset-x-0 bg-white shadow-md py-4 px-6 md:px-12 hidden z-50 animate-fade-in-up">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+            <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                🍪 We use cookies to improve your experience.
+                <a href="/privacy-policy" class="text-red-600 underline hover:text-red-800">
+                    Learn more
+                </a>.
+            </p>
 
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
+            <div class="flex items-center space-x-3">
+                <button id="cookie-decline"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-5 rounded-lg transition">
+                    Decline
+                </button>
 
-            const serviceID = 'service_vfoj3pg';
-            const templateID = 'template_aukpv3w';
+                <button id="cookie-accept"
+                    class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-5 rounded-lg transition">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
 
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    console.log('Email sent successfully!');
-                    contactForm.style.display = 'none';
-                    confirmationMessage.style.display = 'block';
-                    confirmationMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
-
-                    setTimeout(() => {
-                        confirmationMessage.style.display = 'none';
-                        contactForm.style.display = 'block';
-                        contactForm.reset();
-                        submitButton.textContent = 'SEND MESSAGE';
-                        submitButton.disabled = false;
-                    }, 5000);
-                })
-                .catch((err) => {
-                    console.error('Email failed to send:', err);
-                    confirmationMessage.style.display = 'block';
-                    confirmationMessage.textContent = 'Sorry, something went wrong. Please try again later.';
-                    confirmationMessage.classList.remove('text-green-600', 'bg-green-50');
-                    confirmationMessage.classList.add('text-red-600', 'bg-red-50');
-
-                    submitButton.textContent = 'SEND MESSAGE';
-                    submitButton.disabled = false;
-                });
-        });
-    });
-</script>
 
 </body>
 

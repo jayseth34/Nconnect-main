@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - NConnect Solution</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Base styles for Inter font and anti-aliasing */
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            color: #333; /* Default text color */
-            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+            color: #333;
+            /* Default text color */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll due to animations */
         }
-        
+
         .bg-hero-about {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_x_O3Y0J4j_vW1wA5K8o-x_Y9fX_oW4f-qg&s');
             background-size: cover;
@@ -27,31 +33,55 @@
         }
 
         /* Custom styling for overlays to ensure text readability */
-        .overlay-dark-60 { background-color: rgba(0, 0, 0, 0.6); }
+        .overlay-dark-60 {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
 
         /* Keyframe Animations for entrance effects */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Mobile Menu specific styles */
         .mobile-menu {
             transition: transform 0.3s ease-out;
-            transform: translateX(100%); /* Start off-screen to the right */
+            transform: translateX(100%);
+            /* Start off-screen to the right */
         }
+
         .mobile-menu.open {
-            transform: translateX(0); /* Slide in */
+            transform: translateX(0);
+            /* Slide in */
         }
 
         /* Animation class for content on scroll */
@@ -60,10 +90,12 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .bg {
             background-color: rgba(19, 19, 19, 0.7);
             /* 10% opacity black */
@@ -85,47 +117,67 @@
                 <div class="ml-4 h-10 w-[2px] bg-red-500"></div>
             </div>
 
-
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html#hero" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
-                <a href="solutions.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
-                <a href="about-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105 active">ABOUT US</a>
-                <a href="index.html#mission-vision" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">MISSION & VISION</a>
-                <a href="index.html#partners" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">PARTNERS</a>
-                <!-- <a href="index.html#testimonials" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">TESTIMONIALS</a> -->
-                <a href="contact-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">CONTACT</a>
+                <a href="index.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
+                <a href="about-us.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">ABOUT
+                    US</a>
+                <a href="solutions.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
+                <a href="services.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SERVICES</a>
+                <a href="contact-us.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">CONTACT</a>
             </nav>
-            <!-- Mobile Menu Button (Hamburger/Close Icon) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
-                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+                <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
             </button>
         </div>
+
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg p-6 pt-24 z-40 md:hidden">
+        <div id="mobile-menu"
+            class="mobile-menu fixed top-0 right-0 h-full w-64 bg-black text-white shadow-lg p-6 pt-24 z-40 md:hidden">
             <nav class="flex flex-col space-y-6">
-                <a href="index.html#hero" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
-                <a href="solutions.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
-                <a href="about-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300 active">ABOUT US</a>
-                <a href="index.html#mission-vision" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">MISSION & VISION</a>
-                <a href="index.html#partners" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">PARTNERS</a>
-                <!-- <a href="index.html#testimonials" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">TESTIMONIALS</a> -->
-                <a href="contact-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">CONTACT</a>
+                <a href="index.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
+                <a href="about-us.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">ABOUT
+                    US</a>
+                <a href="solutions.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
+                <a href="services.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SERVICES</a>
+                <a href="contact-us.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">CONTACT</a>
             </nav>
         </div>
     </header>
 
     <main class="pt-20"> <!-- Padding to account for fixed header -->
         <!-- Hero Section for About Us Page -->
-       <section class="h-80 flex items-center justify-center text-white relative overflow-hidden px-4 bg-cover bg-center"
-         style="background-image: url('http://www.dtss.in/img/about-us-banner.jpg');">
-    <div class="absolute inset-0 overlay-dark-60"></div>
-    <div class="container relative z-10 text-center animate-fade-in">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">NCONNECT Solution</h1>
-        <p class="text-lg sm:text-xl text-gray-200">Empowering Businesses Through Innovative IT Solutions</p>
-    </div>
-</section>
+        <section
+            class="h-80 flex items-center justify-center text-white relative overflow-hidden px-4 bg-cover bg-center"
+            style="background-image: url('http://www.dtss.in/img/about-us-banner.jpg');">
+            <div class="absolute inset-0 overlay-dark-60"></div>
+            <div class="container relative z-10 text-center animate-fade-in">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">NCONNECT SOLUTION
+                    SYSTEMS PRIVATE LIMITED</h1>
+                <p class="text-lg sm:text-xl text-gray-200">Empowering Businesses Through Innovative IT Solutions</p>
+            </div>
+        </section>
 
 
         <!-- Main About Us Content -->
@@ -133,9 +185,18 @@
             <div class="container mx-auto space-y-12">
                 <!-- Main About Us Text -->
                 <div class="text-center md:text-left animate-on-scroll">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-center">Empowering Businesses Through Innovative IT Solutions</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-center">Empowering Businesses
+                        Through Innovative IT Solutions</h2>
                     <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                        At NConnect Solution, we are more than just a technology provider — we are your trusted partner in digital transformation. We begin every engagement by deeply understanding your organization’s unique needs through thoughtful consultation. What truly sets us apart is our ability to anticipate and navigate the complexities of your business challenges, delivering solutions that are not only effective but also future-ready. Our execution is driven by a team of highly skilled, certified professionals who follow a systematic and timely approach to implementation. We believe that delivering a solution is just the beginning — sustaining and optimizing it is equally critical. That’s why we back our work with regular reviews, audits, and round-the-clock support to ensure your operations remain seamless and efficient.
+                        At NConnect Solution, we are more than just a technology provider — we are your trusted partner
+                        in digital transformation. We begin every engagement by deeply understanding your organization’s
+                        unique needs through thoughtful consultation. What truly sets us apart is our ability to
+                        anticipate and navigate the complexities of your business challenges, delivering solutions that
+                        are not only effective but also future-ready. Our execution is driven by a team of highly
+                        skilled, certified professionals who follow a systematic and timely approach to implementation.
+                        We believe that delivering a solution is just the beginning — sustaining and optimizing it is
+                        equally critical. That’s why we back our work with regular reviews, audits, and round-the-clock
+                        support to ensure your operations remain seamless and efficient.
                     </p>
                 </div>
 
@@ -169,7 +230,9 @@
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">Our Team</h3>
                     <div class="p-8 rounded-xl shadow-xl bg-gray-50">
                         <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                            Our team is composed of seasoned professionals, including certified engineers, architects, and consultants. With deep expertise across a wide range of industries, we are committed to continuous learning and staying future-ready to provide you with the best solutions.
+                            Our team is composed of seasoned professionals, including certified engineers, architects,
+                            and consultants. With deep expertise across a wide range of industries, we are committed to
+                            continuous learning and staying future-ready to provide you with the best solutions.
                         </p>
                     </div>
                 </div>
@@ -219,27 +282,33 @@
                     <ul class="space-y-6 text-gray-700 text-left max-w-4xl mx-auto">
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Customized Solutions</h4>
-                            <p class="text-gray-700">We offer solutions that are perfectly aligned with your unique business goals.</p>
+                            <p class="text-gray-700">We offer solutions that are perfectly aligned with your unique
+                                business goals.</p>
                         </li>
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Agile & Responsive</h4>
-                            <p class="text-gray-700">Our customer-first approach is agile and responsive to your needs.</p>
+                            <p class="text-gray-700">Our customer-first approach is agile and responsive to your needs.
+                            </p>
                         </li>
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Deep Technical Expertise</h4>
-                            <p class="text-gray-700">Benefit from our extensive technical expertise across multiple domains.</p>
+                            <p class="text-gray-700">Benefit from our extensive technical expertise across multiple
+                                domains.</p>
                         </li>
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Proven Track Record</h4>
-                            <p class="text-gray-700">We have a successful history of delivering projects on time and within budget.</p>
+                            <p class="text-gray-700">We have a successful history of delivering projects on time and
+                                within budget.</p>
                         </li>
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Trusted Partnership</h4>
-                            <p class="text-gray-700">We believe in building long-term, transparent, and trustworthy partnerships.</p>
+                            <p class="text-gray-700">We believe in building long-term, transparent, and trustworthy
+                                partnerships.</p>
                         </li>
                         <li class="p-6 rounded-xl shadow-lg bg-gray-50 border-l-4 border-red-600">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Commitment to Innovation</h4>
-                            <p class="text-gray-700">We are committed to continuous innovation and excellence in all we do.</p>
+                            <p class="text-gray-700">We are committed to continuous innovation and excellence in all we
+                                do.</p>
                         </li>
                     </ul>
                 </div>
@@ -248,7 +317,9 @@
                 <div class="py-12 md:py-16 text-center animate-on-scroll">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">Our Commitment</h3>
                     <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                        At NCONNECT Solution, your success is our success. We go beyond just delivering IT services—we become your technology partner for growth. We are committed to helping you adapt, innovate, and excel in today’s fast-changing digital world.
+                        At NCONNECT Solution, your success is our success. We go beyond just delivering IT services—we
+                        become your technology partner for growth. We are committed to helping you adapt, innovate, and
+                        excel in today’s fast-changing digital world.
                     </p>
                 </div>
 
@@ -258,7 +329,9 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="p-8 rounded-xl shadow-xl bg-white border-l-4 border-red-600">
                             <h4 class="text-xl font-bold mb-4 text-red-600">Vision</h4>
-                            <p class="text-gray-700">To be a leading technology solutions provider that empowers organizations to thrive in the digital era by delivering innovative, reliable, and future-proof IT services.</p>
+                            <p class="text-gray-700">To be a leading technology solutions provider that empowers
+                                organizations to thrive in the digital era by delivering innovative, reliable, and
+                                future-proof IT services.</p>
                         </div>
                         <div class="p-8 rounded-xl shadow-xl bg-white border-l-4 border-red-600">
                             <h4 class="text-xl font-bold mb-4 text-red-600">Mission</h4>
@@ -275,7 +348,9 @@
                 <!-- What We Do Section -->
                 <div class="py-12 md:py-16 text-center animate-on-scroll">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">What We Do</h3>
-                    <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-10">We specialize in end-to-end IT services and solutions, tailored to fit each client’s industry, environment, and long-term vision.</p>
+                    <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-10">We specialize in end-to-end IT
+                        services and solutions, tailored to fit each client’s industry, environment, and long-term
+                        vision.</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div class="p-6 rounded-xl shadow-lg bg-white hover:bg-gray-100 transition duration-300">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Cloud Solutions</h4>
@@ -322,19 +397,23 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div class="p-6 rounded-xl shadow-lg bg-white hover:bg-gray-100 transition duration-300">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Client-Centric Mindset</h4>
-                            <p class="text-sm text-gray-600">Deep understanding of client challenges and business goals, with tailored solutions for unique needs.</p>
+                            <p class="text-sm text-gray-600">Deep understanding of client challenges and business goals,
+                                with tailored solutions for unique needs.</p>
                         </div>
                         <div class="p-6 rounded-xl shadow-lg bg-white hover:bg-gray-100 transition duration-300">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Innovative & Agile</h4>
-                            <p class="text-sm text-gray-600">Leading-edge technology adoption and agile delivery models for faster outcomes.</p>
+                            <p class="text-sm text-gray-600">Leading-edge technology adoption and agile delivery models
+                                for faster outcomes.</p>
                         </div>
                         <div class="p-6 rounded-xl shadow-lg bg-white hover:bg-gray-100 transition duration-300">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Minimize Disruption, Maximize Value</h4>
-                            <p class="text-sm text-gray-600">Seamless deployments with minimum downtime and a clear focus on delivering tangible business value.</p>
+                            <p class="text-sm text-gray-600">Seamless deployments with minimum downtime and a clear
+                                focus on delivering tangible business value.</p>
                         </div>
                         <div class="p-6 rounded-xl shadow-lg bg-white hover:bg-gray-100 transition duration-300">
                             <h4 class="font-bold text-lg mb-2 text-red-600">Trusted Partner, Not Just Vendor</h4>
-                            <p class="text-sm text-gray-600">Partnerships based on trust, transparency, and shared success with long-term client relationships.</p>
+                            <p class="text-sm text-gray-600">Partnerships based on trust, transparency, and shared
+                                success with long-term client relationships.</p>
                         </div>
                     </div>
                 </div>
@@ -348,7 +427,10 @@
             <!-- Company Info -->
             <div class="md:col-span-2">
                 <img src="assets/logo.png" alt="NConnect Logo" class="h-14 w-auto mb-4">
-                <p class="text-sm leading-relaxed max-w-sm">NConnect Solution is a premier IT solutions provider dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of services, from infrastructure and networking to cloud computing and security.</p>
+                <p class="text-sm leading-relaxed max-w-sm">NCONNECT SOLUTION SYSTEMS PRIVATE LIMITED is a premier IT
+                    solutions provider
+                    dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of
+                    services, from infrastructure and networking to cloud computing and security.</p>
             </div>
             <!-- Quick Links -->
             <div>
@@ -356,6 +438,7 @@
                 <nav class="space-y-2 text-sm">
                     <a href="index.html#hero" class="block hover:text-red-400 transition duration-200">Home</a>
                     <a href="solutions.html" class="block hover:text-red-400 transition duration-200">Solutions</a>
+                    <a href="services.html" class="block hover:text-red-400 transition duration-200">Services</a>
                     <a href="about-us.html" class="block hover:text-red-400 transition duration-200">About Us</a>
                     <a href="contact-us.html" class="block hover:text-red-400 transition duration-200">Contact</a>
                 </nav>
@@ -366,19 +449,37 @@
                 <div class="space-y-3 text-sm">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-map-marker-alt text-red-500"></i>
-                        <span>123 IT Solutions, Tech Park, City, Country</span>
+                        <span>Registered Address - Plot-27 Hanuman Terrace, 11-a,1st Flr, Grant Road, Mumbai, Mumbai,
+                            Maharashtra, India, 400007
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-red-500"></i><span> Corporates Address - 709, Damji Shamji
+                            Business Galleria,
+                            Above D-Mart, L.B.S. Marg,
+                            Kanjurmarg(W), Mumbai-400 078</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-envelope text-red-500"></i>
-                        <a href="mailto:info@nconnect.com" class="hover:text-red-400">info@nconnect.com</a>
+                        <a href="mailto:sales@nconnectsolution.com"
+                            class="hover:text-red-400">sales@nconnectsolution.com</a>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone-alt text-red-500"></i>
-                        <span>+1 234 567 890</span>
+                        <span>+91 9920387641</span>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <i class="fab fa-linkedin text-red-500"></i>
-                        <a href="https://linkedin.com" target="_blank" class="hover:text-red-400">NConnect Solution</a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -437,4 +538,5 @@
         });
     </script>
 </body>
+
 </html>
