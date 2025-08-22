@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NConnect Solution</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base styles for Inter font and anti-aliasing */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #333; /* Default text color */
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+        
+        .bg-hero-contact {
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Contact+Us+Page');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Custom styling for overlays to ensure text readability */
+        .overlay-dark-60 { background-color: rgba(0, 0, 0, 0.6); }
+
+        /* Keyframe Animations for entrance effects */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Mobile Menu specific styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(100%); /* Start off-screen to the right */
+        }
+        .mobile-menu.open {
+            transform: translateX(0); /* Slide in */
+        }
+        
+        .bg {
+            background-color: rgba(19, 19, 19, 0.7);
+            /* 10% opacity black */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section (replicated from index.html) -->
+    <header class="bg py-4 px-6 md:px-12 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center brightness-150 contrast-150">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="NConnect Logo"
+                        class="h-12 w-auto shadow-md transition duration-300 hover:scale-105">
+                </a>
+                <div class="ml-4 h-10 w-[2px] bg-red-500"></div>
+            </div>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#hero" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
+                <a href="solutions.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
+                <a href="about-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">ABOUT US</a>
+                <a href="index.html#mission-vision" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">MISSION & VISION</a>
+                <a href="index.html#partners" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">PARTNERS</a>
+                <!-- <a href="index.html#testimonials" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">TESTIMONIALS</a> -->
+                <a href="contact-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105 active">CONTACT</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger/Close Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg p-6 pt-24 z-40 md:hidden">
+            <nav class="flex flex-col space-y-6">
+                <a href="index.html#hero" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
+                <a href="solutions.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
+                <a href="about-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">ABOUT US</a>
+                <a href="index.html#mission-vision" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">MISSION & VISION</a>
+                <a href="index.html#partners" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">PARTNERS</a>
+                <!-- <a href="index.html#testimonials" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">TESTIMONIALS</a> -->
+                <a href="contact-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300 active">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Padding to account for fixed header -->
+        <!-- Hero Section for Contact Page 
+        <section class="bg-hero-contact h-80 flex items-center justify-center text-white relative overflow-hidden px-4">
+            <div class="absolute inset-0 overlay-dark-60"></div>
+            <div class="container relative z-10 text-center animate-fade-in">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">Contact Us</h1>
+                <p class="text-lg sm:text-xl text-gray-200">We'd love to hear from you. Get in touch with our team.</p>
+            </div>
+        </section>
+-->
+
+        <!-- Main Content Section: Why Join NConnect & Contact Form -->
+        <section class="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Why Join Section -->
+                <div class="animate-fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Why Join NConnect?</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        At NConnect, our greatest strength lies in our people. We believe that every individual brings unique value, and together, we create a culture that is diverse, inclusive, and truly innovative. Here, your ideas are heard, your contributions are recognized, and you’re empowered to grow both professionally and personally.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Our journey of over three decades in the IT industry has earned us unmatched expertise and credibility — reflected in more than 100 awards from leading OEMs and esteemed industry associations.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        We foster a collaborative and dynamic environment where success is celebrated, learning never stops, and each milestone is shared as a team. Join us and become part of a legacy of excellence, wisdom, and innovation — as we continue to shape the future of technology, together.
+                    </p>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="animate-fade-in-up delay-200">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">GET IN TOUCH</h2>
+                    <div class="max-w-2xl mx-auto bg-gray-50 p-8 md:p-12 rounded-2xl shadow-xl border border-gray-200">
+                        <form id="contact-form" class="space-y-6">
+                            <!-- First Name and Last Name -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                    <input type="text" id="first-name" name="from_first_name" autocomplete="given-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" id="last-name" name="from_last_name" autocomplete="family-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                            </div>
+
+                            <!-- Email and Phone Number -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="from_email" autocomplete="email" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="from_phone" autocomplete="tel" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                            </div>
+
+                            <!-- Company Name -->
+                            <div>
+                                <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                                <input type="text" id="company-name" name="from_company" autocomplete="organization" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="from_message" rows="5" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200"></textarea>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-12 rounded-full shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">SEND MESSAGE</button>
+                            </div>
+                        </form>
+                        <!-- Confirmation Message Box -->
+                        <div id="confirmation-message" class="hidden mt-6 text-center text-green-600 font-semibold p-4 rounded-lg bg-green-50 border border-green-200">
+                            Thank you for your message! We will get back to you shortly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+            <!-- Company Info -->
+            <div class="md:col-span-2">
+                <img src="assets/logo.png" alt="NConnect Logo" class="h-14 w-auto mb-4">
+                <p class="text-sm leading-relaxed max-w-sm">NConnect Solution is a premier IT solutions provider dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of services, from infrastructure and networking to cloud computing and security.</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Quick Links</h4>
+                <nav class="space-y-2 text-sm">
+                    <a href="index.html#hero" class="block hover:text-red-400 transition duration-200">Home</a>
+                    <a href="solutions.html" class="block hover:text-red-400 transition duration-200">Solutions</a>
+                    <a href="about-us.html" class="block hover:text-red-400 transition duration-200">About Us</a>
+                    <a href="contact-us.html" class="block hover:text-red-400 transition duration-200">Contact</a>
+                </nav>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Contact Info</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-red-500"></i>
+                        <span>123 IT Solutions, Tech Park, City, Country</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-red-500"></i>
+                        <a href="mailto:info@nconnect.com" class="hover:text-red-400">info@nconnect.com</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone-alt text-red-500"></i>
+                        <span>+1 234 567 890</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-red-500"></i>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-red-400">NConnect Solution</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm">
+            <p>&copy; 2024 NConnect Solution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- JavaScript for Mobile Menu and Form functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+
+            // Initialize EmailJS with your Public Key
+            // You will need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key.
+            // You can find this on your EmailJS dashboard under Account -> API Keys.
+            emailjs.init('8GPPjcdODiUdEwMb7');
+
+            // Contact Form Submission
+            const contactForm = document.getElementById('contact-form');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                // Show a loading state on the button
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+
+                // Service ID and Template ID from your EmailJS dashboard
+                const serviceID = 'service_vfoj3pg'; // Replace with your Service ID
+                const templateID = 'template_aukpv3w'; // Replace with your Template ID
+
+                // Send the form data using emailjs.sendForm()
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        console.log('Email sent successfully!');
+                        // Hide the form and show the confirmation message
+                        contactForm.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
+                        
+                        // Reset the form and button after a short delay
+                        setTimeout(() => {
+                            confirmationMessage.style.display = 'none';
+                            contactForm.style.display = 'block';
+                            contactForm.reset();
+                            submitButton.textContent = 'SEND MESSAGE';
+                            submitButton.disabled = false;
+                        }, 5000); // Message disappears after 5 seconds
+                    })
+                    .catch((err) => {
+                        console.error('Email failed to send:', err);
+                        // Show an error message
+                        confirmationMessage.style.display = 'block';
+                        confirmationMessage.textContent = 'Sorry, something went wrong. Please try again later.';
+                        confirmationMessage.classList.remove('text-green-600', 'bg-green-50');
+                        confirmationMessage.classList.add('text-red-600', 'bg-red-50');
+                        
+                        // Reset the button
+                        submitButton.textContent = 'SEND MESSAGE';
+                        submitButton.disabled = false;
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

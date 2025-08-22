@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NConnect Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base styles from index.html */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #333; /* Default text color */
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+        .bg-solutions-hero {
+            background-image: url('https://img.freepik.com/free-photo/view-futuristic-urban-cityscape_23-2150370481.jpg?t=st=1723789851~exp=1723793451~hm=d89c0f91a6e76c117188722b5e28a38a379104085e49591465e90098f4848d51&w=1060');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .overlay-dark-60 { background-color: rgba(0, 0, 0, 0.6); }
+
+        /* Animation keyframes and classes from index.html */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fadeInDown 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+        /* Custom icon styling for cards */
+        .card-icon {
+            font-size: 2.5rem;
+            color: #dc2626; /* red-600 */
+        }
+    .bg {
+            background-color: rgba(19, 19, 19, 0.7);
+            /* 10% opacity black */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section (replicated from index.html) -->
+    <header class="bg py-4 px-6 md:px-12 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center brightness-150 contrast-150">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="NConnect Logo"
+                        class="h-12 w-auto shadow-md transition duration-300 hover:scale-105">
+                </a>
+                <div class="ml-4 h-10 w-[2px] bg-red-500"></div>
+            </div>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
+                <a href="solutions.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
+                <a href="about-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">ABOUT US</a>
+                <a href="index.html#mission-vision" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">MISSION & VISION</a>
+                <a href="index.html#partners" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">PARTNERS</a>
+                <!-- <a href="#testimonials" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">TESTIMONIALS</a> -->
+                <a href="contact-us.html" class="nav-link text-gray-200 hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">CONTACT</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger/Close Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg p-6 pt-24 z-40 md:hidden">
+            <nav class="flex flex-col space-y-6">
+                <a href="index.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
+                <a href="solutions.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
+                <a href="about-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">ABOUT US</a>
+                <a href="index.html#mission-vision" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">MISSION & VISION</a>
+                <a href="index.html#partners" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">PARTNERS</a>
+                <!-- <a href="#testimonials" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">TESTIMONIALS</a> -->
+                <a href="contact-us.html" class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for Solutions Page -->
+        <section class="h-80 flex items-center justify-center text-white relative overflow-hidden px-4 bg-cover bg-center"
+         style="background-image: url('https://ielts-up.com/images/solution.jpg');">
+    <div class="absolute inset-0 overlay-dark-60"></div>
+    <div class="container relative z-10 text-center animate-fade-in">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">NCONNECT Solution</h1>
+        <p class="text-lg sm:text-xl text-gray-200">Empowering Businesses Through Innovative IT Solutions</p>
+    </div>
+</section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">What We Do</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    At NConnect Solution, we deliver end-to-end IT services and solutions, thoughtfully crafted to align with each client’s
+                    unique industry dynamics, operational environment, and long-term business vision. We believe technology is a powerful
+                    enabler of growth, and our expertise lies in tailoring innovative, scalable, and future-ready solutions that help
+                    organizations thrive in the digital era.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solutions Grid Section -->
+        <section id="solutions-grid" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cloud Solutions Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-cloud card-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Cloud Solutions</h3>
+                        <p class="text-gray-600 mb-4">
+                            We help businesses harness the power of the cloud to drive agility, scalability, and efficiency.
+                        </p>
+                        <ul class="text-gray-600 list-none space-y-2">
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Cloud migration & deployment: Seamlessly move workloads to the cloud with minimal disruption.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Hybrid & multi-cloud strategy: Design and implement flexible cloud architectures that suit diverse needs.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Cloud optimization & cost management: Maximize ROI through efficient resource utilization and cost control.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Managed cloud services: End-to-end management and support to keep your cloud environment secure and high-performing.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cybersecurity Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-shield-halved card-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Cybersecurity</h3>
+                        <p class="text-gray-600 mb-4">
+                            Safeguarding your digital assets is at the heart of what we do. Our cybersecurity solutions protect your business from evolving threats and ensure compliance.
+                        </p>
+                        <ul class="text-gray-600 list-none space-y-2">
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Comprehensive cybersecurity assessments: Identify risks and strengthen your security posture.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>SIEM & SOC implementation: Deploy advanced monitoring and incident response capabilities.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Endpoint & network security: Protect critical endpoints and networks with robust defense mechanisms.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Regulatory & compliance management: Stay ahead of industry regulations with our compliance-driven approach.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Networking & Infrastructure Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-network-wired card-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Networking & Infrastructure</h3>
+                        <p class="text-gray-600 mb-4">
+                            Build a strong, reliable foundation for your business with our cutting-edge networking and infrastructure services.
+                        </p>
+                        <ul class="text-gray-600 list-none space-y-2">
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Network architecture & design: Create secure, scalable networks tailored to your business needs.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>LAN/WAN optimization: Improve performance and reduce latency across your enterprise network.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Software-defined networking (SDN): Enable greater control, flexibility, and efficiency.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Data center solutions & modernization: Upgrade and optimize your data center to meet modern demands.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Managed IT Services Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-headset card-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Managed IT Services</h3>
+                        <p class="text-gray-600 mb-4">
+                            We keep your IT running smoothly so you can focus on your core business. Our managed services deliver consistent, SLA-driven support and performance.
+                        </p>
+                        <ul class="text-gray-600 list-none space-y-2">
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>IT operations management: Streamline day-to-day operations for maximum efficiency.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>24x7 remote monitoring & support: Ensure uptime and proactive issue resolution around the clock.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Proactive maintenance & upgrades: Keep your systems current, secure, and optimized.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>SLA-driven service delivery: Get measurable, reliable outcomes aligned to your business goals.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Digital Workplace Solutions Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="text-center mb-6">
+                            <i class="fa-solid fa-briefcase card-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Digital Workplace Solutions</h3>
+                        <p class="text-gray-600 mb-4">
+                            Empower your workforce with modern, collaborative, and secure digital workplace solutions designed for today’s hybrid work environments.
+                        </p>
+                        <ul class="text-gray-600 list-none space-y-2">
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Unified communication & collaboration: Foster seamless teamwork with advanced tools and platforms.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Virtual desktop infrastructure (VDI): Deliver secure, flexible access to desktops and applications from anywhere.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Enterprise mobility & endpoint management: Manage devices and data securely across your workforce.</li>
+                            <li><i class="fa-solid fa-check-circle text-red-500 mr-2"></i>Secure remote work enablement: Enable productivity and security for your remote employees.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact/CTA Card -->
+                    <div class="bg-red-600 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-center items-center text-white">
+                        <h3 class="text-2xl font-bold mb-4 text-center">Ready to Transform Your IT?</h3>
+                        <p class="text-center mb-6">
+                            Contact us today for a personalized consultation.
+                        </p>
+                        <a href="contact-us.html" class="bg-white text-red-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                            GET IN TOUCH
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+            <!-- Company Info -->
+            <div class="md:col-span-2">
+                <img src="assets/logo.png" alt="NConnect Logo" class="h-14 w-auto mb-4">
+                <p class="text-sm leading-relaxed max-w-sm">NConnect Solution is a premier IT solutions provider dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of services, from infrastructure and networking to cloud computing and security.</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Quick Links</h4>
+                <nav class="space-y-2 text-sm">
+                    <a href="index.html#hero" class="block hover:text-red-400 transition duration-200">Home</a>
+                    <a href="solutions.html" class="block hover:text-red-400 transition duration-200">Solutions</a>
+                    <a href="about-us.html" class="block hover:text-red-400 transition duration-200">About Us</a>
+                    <a href="contact-us.html" class="block hover:text-red-400 transition duration-200">Contact</a>
+                </nav>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Contact Info</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-red-500"></i>
+                        <span>123 IT Solutions, Tech Park, City, Country</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-red-500"></i>
+                        <a href="mailto:info@nconnect.com" class="hover:text-red-400">info@nconnect.com</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone-alt text-red-500"></i>
+                        <span>+1 234 567 890</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-red-500"></i>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-red-400">NConnect Solution</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm">
+            <p>&copy; 2024 NConnect Solution. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

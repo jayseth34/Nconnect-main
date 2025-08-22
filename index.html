@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NConnect Solution - Replicated Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base styles for Inter font and anti-aliasing */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #333;
+            /* Default text color */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll due to animations */
+        }
+
+        /* Custom styles for section backgrounds with placeholder images */
+        /* These can be replaced with actual high-quality images */
+        .bg-hero {
+            background-image: url('https://www.datadynamicsinc.com/wp-content/uploads/2023/02/From-the-Clouds-Descends-a-Greener-Future-Embracing-the-Power-of-Cloud-Computing-for-a-Sustainable-Future.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Added for the rolling/parallax effect */
+        }
+
+        /* Background image */
+        .bg-about {
+            background-image: url('/assets/about-image.jpg');
+            background-size: cover;
+            background-position: right center;
+            background-repeat: no-repeat;
+            /* Background attachment set to scroll by default (for mobile) */
+            background-attachment: scroll;
+        }
+
+        .overlay-dark-75 {
+            /* For mobile screens, make the overlay slightly more opaque for better text readability */
+            background-color: rgba(0, 0, 0, 0.25);
+            /* Slightly darker for better contrast */
+        }
+
+        .clip-right-slant {
+            /* For mobile/smaller screens: a standard rectangular shape for a clean look */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+
+            /* Apply styles only on large screens and up */
+            .bg-about {
+                /* Revert to fixed background attachment for desktop screens */
+                background-attachment: fixed;
+            }
+
+            .overlay-dark-75 {
+                /* Revert to the original dark overlay for desktop screens */
+                background-color: rgba(0, 0, 0, 0.75);
+            }
+
+            .clip-right-slant {
+                /* For large screens: increased the size of the polygon slant */
+                clip-path: polygon(0 0, 70% 0, 95% 100%, 0% 100%);
+            }
+        }
+
+
+        .bg-partners {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLCrrplMM8pSNO9oIUOvM1N0Al818KlrpNA&s');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-testimonials {
+            background-image: url('https://t3.ftcdn.net/jpg/02/02/17/98/360_F_202179892_E8WH989QcZtBP2RKEBEjIOoNxZTEOOBT.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Custom styling for overlays to ensure text readability */
+        .overlay-dark-60 {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .overlay-dark-75 {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        .overlay-white-90 {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Added a subtle gradient overlay for the hero section */
+        .overlay-hero-gradient {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        /* Custom icon styling for solutions section cards */
+        .solution-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            /* Slightly larger icon */
+            height: 64px;
+            /* Slightly larger icon */
+            border-radius: 50%;
+            background-color: #fef2f2;
+            /* Light red background from Tailwind's red-50 */
+            color: #ef4444;
+            /* Red color for icons from Tailwind's red-500 */
+            font-size: 2.25rem;
+            /* Larger icon size */
+            margin-bottom: 1.5rem;
+            /* More space below icon */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            /* Stronger shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .solution-card:hover .solution-icon {
+            transform: translateY(-8px) rotate(5deg);
+            /* More pronounced lift and slight rotation */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            /* Even stronger shadow on hover */
+        }
+
+        .solution-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            /* Lift the card on hover */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            /* More intense shadow */
+        }
+
+        /* Keyframe Animations for entrance effects */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+
+            /* More pronounced slide */
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+
+            /* More pronounced slide */
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Animation classes for elements with staggered delays */
+        .animate-fade-in-down {
+            animation: fadeInDown 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Classes for scroll-triggered animations (visibility observer) */
+        .section-animate {
+            opacity: 0;
+            transform: translateY(60px);
+            /* Start further down */
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            /* Slower, smoother transition */
+        }
+
+        .section-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logo-animate {
+            opacity: 0;
+            transform: scale(0.7);
+            /* Start smaller */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            /* Slower animation */
+        }
+
+        .logo-animate.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Carousel specific styles for smooth transitions */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* Flexbox for vertical stacking and centering within testimonial cards */
+            display: flex;
+            /* Changed from grid to flex for consistent vertical centering */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Ensure text is centered */
+            transition: opacity 0.7s ease-in-out;
+            /* Smooth fade for carousel items */
+        }
+
+        .carousel-item.active {
+            display: flex;
+            /* Keep as flex when active */
+            opacity: 1;
+            position: relative;
+            /* Active item takes up space */
+        }
+
+        /* Partner carousel item specifically for grid layout */
+        #partner-carousel .carousel-item.active {
+            display: grid;
+            /* Keep grid for partner logos */
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            /* Adjusted minmax for mobile */
+            gap: 1rem 1.5rem;
+            /* Smaller gap for mobile */
+            justify-items: center;
+            align-items: center;
+            overflow-x: auto;
+            /* Enable horizontal scrolling for logos on small screens */
+            padding-bottom: 10px;
+            /* Add some padding for scrollbar visibility */
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on iOS */
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            /* More space for dots */
+            gap: 0.75rem;
+            /* Larger gap between dots */
+        }
+
+        .carousel-dot {
+            width: 12px;
+            /* Larger dots */
+            height: 12px;
+            /* Larger dots */
+            background-color: #9ca3af;
+            /* gray-400 */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .carousel-dot:hover {
+            transform: scale(1.2);
+            /* Pop on hover */
+        }
+
+        .carousel-dot.active {
+            background-color: #dc2626;
+            /* red-600 */
+            transform: scale(1.2);
+            /* Larger when active */
+        }
+
+        /* Navigation active link style with subtle underline */
+        .nav-link.active {
+            color: #dc2626;
+            /* red-600 */
+            font-weight: 700;
+            /* Inter-Bold */
+            transform: scale(1.05);
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #dc2626;
+            border-radius: 2px;
+            animation: underlineGrow 0.3s ease-out forwards;
+        }
+
+        @keyframes underlineGrow {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Testimonial specific styling for quotes */
+        .testimonial-quote {
+            position: relative;
+            /* For positioning quote marks */
+            padding: 0 2rem;
+            /* Padding to ensure quote marks don't overlap text */
+            font-size: 1.35rem;
+            /* Slightly larger quote text */
+            line-height: 1.7;
+            /* Improved readability */
+        }
+
+        .testimonial-quote::before {
+            content: "“";
+            font-family: serif;
+            font-size: 5rem;
+            /* Larger quote mark */
+            color: #ef4444;
+            /* red-500 */
+            line-height: 0;
+            position: absolute;
+            top: -0.5em;
+            /* Adjust position */
+            left: 0;
+            opacity: 0.8;
+            z-index: 0;
+            /* Behind text */
+        }
+
+        .testimonial-quote::after {
+            content: "”";
+            font-family: serif;
+            font-size: 5rem;
+            /* Larger quote mark */
+            color: #ef4444;
+            /* red-500 */
+            line-height: 0;
+            position: absolute;
+            bottom: -0.5em;
+            /* Adjust position */
+            right: 0;
+            opacity: 0.8;
+            z-index: 0;
+            /* Behind text */
+        }
+
+        /* Ensure the text is above the pseudo-elements */
+        .testimonial-quote p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile Menu specific styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(100%);
+            /* Start off-screen to the right */
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+            /* Slide in */
+        }
+        
+        .bg {
+                background-color: rgba(19, 19, 19, 0.7);
+                /* 10% opacity black */
+            }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section (replicated from index.html) -->
+    <header class="bg py-4 px-6 md:px-12 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center brightness-150 contrast-150">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="NConnect Logo"
+                        class="h-12 w-auto shadow-md transition duration-300 hover:scale-105">
+                </a>
+                <div class="ml-4 h-10 w-[2px] bg-red-500"></div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">HOME</a>
+                <a href="solutions.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">SOLUTIONS</a>
+                <a href="about-us.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">ABOUT
+                    US</a>
+                <a href="#mission-vision"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">MISSION
+                    & VISION</a>
+                <a href="#partners"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">PARTNERS</a>
+                <a href="contact-us.html"
+                    class="nav-link text-white hover:text-red-400 font-semibold transition duration-300 transform hover:scale-105">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+                <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu"
+            class="mobile-menu fixed top-0 right-0 h-full w-64 bg-black text-white shadow-lg p-6 pt-24 z-40 md:hidden">
+            <nav class="flex flex-col space-y-6">
+                <a href="#hero"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">HOME</a>
+                <a href="solutions.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">SOLUTIONS</a>
+                <a href="about-us.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">ABOUT
+                    US</a>
+                <a href="#mission-vision"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">MISSION
+                    & VISION</a>
+                <a href="#partners"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">PARTNERS</a>
+                <a href="contact-us.html"
+                    class="mobile-nav-link text-white hover:text-red-400 font-semibold text-lg transition duration-300">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Padding to account for fixed header -->
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center text-white overflow-hidden px-4 sm:px-6 lg:px-8">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="assets/videoplayback.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 overlay-hero-gradient z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="container ml-4 md:ml-12 lg:ml-20 relative z-20 py-16 text-left max-w-2xl">
+      <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 leading-tight drop-shadow-lg animate-fade-in-down whitespace-nowrap">
+        WELCOME TO NCONNECT SOLUTION !!
+      </h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-red-400 drop-shadow-md animate-fade-in-up">
+        Focus on business, <span class="text-white">we handle IT</span>
+      </h2>
+      <div class="flex flex-col items-start space-y-3 mb-10 text-xs sm:text-sm md:text-base font-medium">
+        <p class="text-white transition duration-300 animate-fade-in">Infrastructure and Networking</p>
+        <p class="text-white transition duration-300 animate-fade-in delay-100">Datacenter Solutions</p>
+        <p class="text-white transition duration-300 animate-fade-in delay-200">Managed IT Services</p>
+        <p class="text-white transition duration-300 animate-fade-in delay-300">Cloud Computing</p>
+        <p class="text-white transition duration-300 animate-fade-in delay-400">Security & Compliance</p>
+        <p class="text-white transition duration-300 animate-fade-in delay-500">Contract Renewals</p>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+        <button onclick="window.location.href='about-us.html'"
+          class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-600">
+          KNOW MORE
+        </button>
+        <button onclick="window.location.href='contact-us.html'"
+          class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 text-white font-bold py-3 px-8 sm:px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 animate-fade-in delay-700">
+          CONTACT US
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="py-16 md:py-24 lg:py-32 bg-gray-50 section-animate px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 lg:mb-20 text-gray-900">OUR
+                    SOLUTIONS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-14">
+                    <!-- Solution 1 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">⚙️</div> <!-- Gear icon for Infrastructure -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">INFRASTRUCTURE AND NETWORKING
+                        </h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Robust, scalable networking solutions
+                            tailored to your business. We design, deploy, and manage your infrastructure, ensuring
+                            seamless connectivity and optimal performance.</p>
+                    </div>
+                    <!-- Solution 2 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">💾</div> <!-- Database icon for Datacenter -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">DATACENTER SOLUTIONS</h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Secure, efficient datacenter design and
+                            management. We provide reliable infrastructure, colocation, and disaster recovery, ensuring
+                            business continuity and data integrity.</p>
+                    </div>
+                    <!-- Solution 3 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">☁️</div> <!-- Cloud icon for Cloud Computing -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">CLOUD COMPUTING</h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Cloud computing offers unparalleled
+                            flexibility and scalability, transforming how businesses operate. It allows organizations to
+                            access and utilize computing resources as servers, storage, applications, and services over
+                            the Internet, eliminating the need for extensive on-premises infrastructure.</p>
+                    </div>
+                    <!-- Solution 4 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">🔒</div> <!-- Lock icon for Security -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">SECURITY & COMPLIANCE</h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Comprehensive security and compliance
+                            solutions. We protect your data and systems with advanced security measures, ensuring
+                            regulatory adherence and minimizing risk.</p>
+                    </div>
+                    <!-- Solution 5 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">📄</div> <!-- Document icon for Contracts -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">CONTRACT RENEWALS</h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Streamlined contract renewal management. We
+                            handle the complexities of renewals, ensuring optimal terms and minimizing disruptions to
+                            your essential services.</p>
+                    </div>
+                    <!-- Solution 6 -->
+                    <div
+                        class="solution-card bg-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col items-start hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="solution-icon">👨‍💻</div> <!-- Person with laptop icon for Managed IT -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-900">MANAGED IT SERVICES</h3>
+                        <p class="text-gray-600 text-base leading-relaxed">Proactive IT management and support. We
+                            handle day-to-day IT operations, freeing you to focus on strategic business growth and
+                            minimizing downtime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About NConnect Section -->
+        <section id="about" class="bg-about relative">
+            <div class="flex flex-col lg:flex-row w-full items-stretch relative z-10">
+                <!-- Main container for text, set to half width on large screens -->
+                <div class="lg:w-1/2 lg:pr-0 lg:mb-0 animate-slide-in-left bg-white bg-opacity-100 text-gray-800 shadow-lg clip-right-slant"
+                    style="padding: 5%; padding-right: 5%;">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-0 text-black drop-shadow-md">ABOUT NCONNECT</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-0 text-black drop-shadow-md">SOLUTION SYSTEMS</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-0 text-black drop-shadow-md">PRIVATE LIMITED</h2>
+                    <br />
+                    <div class="h-1 bg-red-600 mb-6" style="width: 10%;"></div>
+                    <!-- Adjusted <br> tags to allow more words per line -->
+                    <p class="mb-5 text-base md:text-sm leading-relaxed">NCONNECT SOLUTION thrives on innovation,
+                        efficiency,<br> and excellence, aiming to transform IT solutions. We craft<br> customized
+                        technology services, understanding that each<br> business has unique needs.</p>
+                    <p class="mb-5 text-base md:text-sm leading-relaxed">We prioritize understanding client specifics,
+                        industry nuances,<br> and long-term goals. This allows us to create tailored IT<br> strategies,
+                        not generic solutions. Our team of seasoned<br> professionals stays ahead of tech trends,
+                        guaranteeing clients<br> benefit from the most advanced, efficient solutions available.</p>
+                    <p class="mb-8 md:mb-10 text-base md:text-sm leading-relaxed">Whether it's cloud, cybersecurity,
+                        networking, or software,<br> we focus on maximizing efficiency and minimizing disruption.<br> We
+                        empower clients to thrive in the digital age. At NCONNECT<br> SOLUTION, client success is our
+                        success, building partnerships<br> based on trust and mutual growth.</p>
+                </div>
+                <!-- The remaining space (for image/visual) is also set to half width on large screens -->
+                <div class="lg:w-1/2 flex justify-center items-center animate-slide-in-right"></div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Mission & Vision Section -->
+        <section id="mission-vision" class="py-16 md:py-24 lg:py-32 bg-white section-animate px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 lg:mb-20 text-gray-900">OUR MISSION
+                    & VISION</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
+                    <!-- Mission -->
+                    <div
+                        class="flex flex-col items-center bg-gray-50 p-8 sm:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <img src="https://img.freepik.com/premium-photo/businessman-clicks-virtual-screen-mission_1085052-765.jpg"
+                            alt="Mission Icon"
+                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4 border-red-500">
+                        <div class="text-center">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Mission</h3>
+                            <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">To deliver cutting-edge
+                                IT solutions that enable businesses to thrive in a digital world.</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">We provide innovative IT solutions,
+                                empowering businesses to succeed in the digital age. By understanding evolving needs, we
+                                deliver tailored technology that drives growth, enhances efficiency, and ensures secure,
+                                seamless operations, enabling our clients to excel in a dynamic market.</p>
+                        </div>
+                    </div>
+                    <!-- Vision -->
+                    <div
+                        class="flex flex-col items-center bg-gray-50 p-8 sm:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt4ZzqxrAbrgSHY0CXc-wvPxf70bPPOW_njg&s"
+                            alt="Vision Icon"
+                            class="w-28 h-28 md:w-32 md:h-32 mb-6 md:mb-8 rounded-full shadow-lg flex-shrink-0 border-4 border-red-500">
+                        <div class="text-center">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Vision</h3>
+                            <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">To be the leading IT
+                                system integration partner known for reliability, innovation, and excellence.</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Our goal is to be the premier IT
+                                integrator, recognized for dependable, innovative, and high-quality solutions. We aim to
+                                build lasting partnerships through consistent excellence, driving client success by
+                                seamlessly integrating advanced technologies and delivering reliable, cutting-edge IT
+                                systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted Tech Partners Section -->
+        <section id="partners" class="bg-white section-animate relative px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto relative z-10 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-12 drop-shadow-lg">Our Trusted Tech Partners
+                </h2>
+                <div class="relative w-full">
+                    <div id="partner-carousel"
+                        class="carousel-container min-h-[150px] flex items-center justify-center">
+                        <!-- Partner Carousel Items -->
+                        <div class="carousel-item active" data-slide="0">
+                            <div class="partner-logo-wrapper"><img src="assets/hp.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/cisco.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/IBM.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/Dell.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/nutanix.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/images.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/ruckus.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/Cambium.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/cab.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/download.jpeg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/hpe_greenlake_grn_pos_rgb.png"
+                                    alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/HP_Logo_OT_email.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+
+                        </div>
+                        <div class="carousel-item" data-slide="1">
+                            <div class="partner-logo-wrapper"><img src="assets/hpe.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/lenovo.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/Forcepoint.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/veeam.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/Veritas.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img
+                                    src="assets/74dc3a5a84b8b32bc3b6e1c465c3e6_1657327796.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/quantum.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/netgear.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/tplink.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+
+                        </div>
+                        <div class="carousel-item" data-slide="2">
+                            <div class="partner-logo-wrapper"><img src="assets/fortinet.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/nettap.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/netapp.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/legrand.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/rit.jpg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/ruijie.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/3.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/1.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/2.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+
+                        </div>
+                        <div class="carousel-item active" data-slide="3">
+                            <div class="partner-logo-wrapper"><img src="assets/download.jpeg" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/hpe_greenlake_grn_pos_rgb.png"
+                                    alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/HP_Logo_OT_email.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/4.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/5.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/6.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/axis.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/hikvision.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                            <div class="partner-logo-wrapper"><img src="assets/7.png" alt="Partner Logo"
+                                    class="w-full h-auto max-h-20 object-contain transition duration-300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-black text-center text-sm italic mt-8">Logos displayed are owned by respective
+                    brands/companies.</p>
+                <div class="carousel-dots" id="partner-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                </div>
+                
+                </br>
+            </div>
+        </section>
+
+        <!-- Customer Success Stories Section -->
+        <!-- <section id="testimonials"
+            class="py-16 md:py-24 lg:py-32 bg-testimonials relative bg-fixed section-animate px-4 sm:px-6 lg:px-8">
+            <div class="absolute inset-0 overlay-dark-75"></div>
+            <div class="container mx-auto relative z-10 text-white py-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 lg:mb-20 drop-shadow-lg">CUSTOMER
+                    SUCCESS STORIES</h2>
+                <div id="testimonial-carousel"
+                    class="relative carousel-container min-h-[380px] md:min-h-[350px] flex items-center justify-center">
+                    <div
+                        class="carousel-item active bg-gray-900 bg-opacity-80 p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center border border-red-500 flex flex-col items-center justify-center">
+                        <img src="https://placehold.co/120x120/cccccc/ffffff?text=Avatar+1" alt="Customer Avatar"
+                            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 md:mb-8 border-4 border-red-600 shadow-lg">
+                        <p class="text-lg md:text-xl italic mb-6 md:mb-8 leading-relaxed testimonial-quote">NCONNECT
+                            Solution helped us completely revamp our data center infrastructure. We were facing severe
+                            latency and downtime issues, impacting production reporting and ERP system performance.
+                            Their team not only designed a high-availability architecture but also migrated our systems
+                            with zero disruption. We've now seen a 40% boost in application performance and drastically
+                            improved user satisfaction across our factories.</p>
+                        <p class="font-bold text-xl md:text-2xl text-red-400 mb-2">Priya Nair</p>
+                        <p class="text-base text-gray-300">CIO, Trident Engineering Ltd.</p>
+                    </div>
+                    <div
+                        class="carousel-item bg-gray-900 bg-opacity-80 p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center border border-red-500 flex flex-col items-center justify-center">
+                        <img src="https://placehold.co/120x120/cccccc/ffffff?text=Avatar+2" alt="Customer Avatar"
+                            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 md:mb-8 border-4 border-red-600 shadow-lg">
+                        <p class="text-lg md:text-xl italic mb-6 md:mb-8 leading-relaxed testimonial-quote">Scaling our
+                            cloud infrastructure to meet growing customer demand was a constant struggle for our team.
+                            NCONNECT Solution provided us with a fully automated cloud management platform with clear
+                            cost controls. Not only did we optimize our cloud spend by 30%, but we also achieved much
+                            faster deployment cycles. They truly became an extended arm of our DevOps team.</p>
+                        <p class="font-bold text-xl md:text-2xl text-red-400 mb-2">Dharmesh Vats</p>
+                        <p class="text-base text-gray-300">Founder and CEO at Global Learning House Pvt Ltd</p>
+                    </div>
+                    <div
+                        class="carousel-item bg-gray-900 bg-opacity-80 p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center border border-red-500 flex flex-col items-center justify-center">
+                        <img src="https://placehold.co/120x120/cccccc/ffffff?text=Avatar+3" alt="Customer Avatar"
+                            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 md:mb-8 border-4 border-red-600 shadow-lg">
+                        <p class="text-lg md:text-xl italic mb-6 md:mb-8 leading-relaxed testimonial-quote">We were
+                            struggling to provide seamless online learning during the pandemic due to poor network
+                            reliability and lack of an integrated platform. NCONNECT Solution designed and implemented a
+                            secure, scalable virtual learning platform integrated with our LMS and video conferencing
+                            tools. The student and faculty experience improved tremendously. We are now fully confident
+                            in our digital delivery capabilities.</p>
+                        <p class="font-bold text-xl md:text-2xl text-red-400 mb-2">Hemant Kadam</p>
+                        <p class="text-base text-gray-300">Director - IT & Digital Learning, Harmony University</p>
+                    </div>
+                    <div
+                        class="carousel-item bg-gray-900 bg-opacity-80 p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto text-center border border-red-500 flex flex-col items-center justify-center">
+                        <img src="https://placehold.co/120x120/cccccc/ffffff?text=Avatar+4" alt="Customer Avatar"
+                            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 md:mb-8 border-4 border-red-600 shadow-lg">
+                        <p class="text-lg md:text-xl italic mb-6 md:mb-8 leading-relaxed testimonial-quote">Our hospital
+                            network was facing challenges with siloed systems and lack of data integration across
+                            departments. NCONNECT Solution helped us design and deploy a comprehensive healthcare IT
+                            solution with centralized EMR, secure access control, and improved interoperability. The
+                            outcome is faster clinical decisions, better patient experience, and improved regulatory
+                            compliance. I highly recommend them.</p>
+                        <p class="font-bold text-xl md:text-2xl text-red-400 mb-2">Saurabh Jain</p>
+                        <p class="text-base text-gray-300">CIO, LifeLine Hospitals Group</p>
+                    </div>
+                </div>
+                <div id="testimonial-dots" class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-16 md:py-24 lg:py-32 bg-gray-100 section-animate px-4 sm:px-6 lg:px-8">
+            <div
+                class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 bg-white p-8 sm:p-10 rounded-2xl shadow-2xl border border-gray-100">
+                <!-- Let's Talk Column -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-gray-900">LET'S TALK</h2>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">Corporate Office</h3>
+                    <p class="text-gray-700 mb-2">The Jewel Building, Roxy Chambers</p>
+                    <p class="text-700 mb-2">1st Floor, Office No- 109,</p>
+                    <p class="text-gray-700 mb-2">Charni Road(E), Opera House,</p>
+                    <p class="text-gray-700 mb-6 md:mb-8">Girgaon, Mumbai-400004</p>
+
+                    <p class="text-gray-700 mb-2"><strong>Phone:</strong> <a href="tel:+919920387641"
+                            class="text-red-600 hover:underline transition duration-200">(+91) 9920387641</a></p>
+                    <p class="text-gray-700 mb-6 md:mb-8"><strong>Email:</strong> <a
+                            href="mailto:info@nconnectsolution.com"
+                            class="text-red-600 hover:underline transition duration-200">info@nconnectsolution.com</a> |
+                        <a href="mailto:info@nconnectsolution.com"
+                            class="text-red-600 hover:underline transition duration-200">info@nconnectsolution.com</a>
+                    </p>
+
+                    <div class="flex space-x-6 mt-6 md:mt-8">
+                        <a href="#"
+                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-twitter text-3xl"></i>
+                        </a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-facebook-f text-3xl"></i>
+                        </a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-red-600 transition duration-300 transform hover:scale-125">
+                            <i class="fab fa-linkedin-in text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Us Form Column -->
+                <div class="animate-fade-in-up delay-200">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">GET IN TOUCH</h2>
+                    <div class="max-w-2xl mx-auto bg-gray-50 p-8 md:p-12 rounded-2xl shadow-xl border border-gray-200">
+                        <form id="contact-form" class="space-y-6">
+                            <!-- First Name and Last Name -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                    <input type="text" id="first-name" name="from_first_name" autocomplete="given-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" id="last-name" name="from_last_name" autocomplete="family-name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                            </div>
+
+                            <!-- Email and Phone Number -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="from_email" autocomplete="email" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="from_phone" autocomplete="tel" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                                </div>
+                            </div>
+
+                            <!-- Company Name -->
+                            <div>
+                                <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                                <input type="text" id="company-name" name="from_company" autocomplete="organization" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200">
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="from_message" rows="5" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 transition duration-200"></textarea>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-12 rounded-full shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">SEND MESSAGE</button>
+                            </div>
+                        </form>
+                        <!-- Confirmation Message Box -->
+                        <div id="confirmation-message" class="hidden mt-6 text-center text-green-600 font-semibold p-4 rounded-lg bg-green-50 border border-green-200">
+                            Thank you for your message! We will get back to you shortly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+            <!-- Company Info -->
+            <div class="md:col-span-2">
+                <img src="assets/logo.png" alt="NConnect Logo" class="h-14 w-auto mb-4">
+                <p class="text-sm leading-relaxed max-w-sm">NConnect Solution is a premier IT solutions provider
+                    dedicated to helping businesses thrive in the digital age. We offer a comprehensive suite of
+                    services, from infrastructure and networking to cloud computing and security.</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Quick Links</h4>
+                <nav class="space-y-2 text-sm">
+                    <a href="index.html#hero" class="block hover:text-red-400 transition duration-200">Home</a>
+                    <a href="solutions.html" class="block hover:text-red-400 transition duration-200">Solutions</a>
+                    <a href="about-us.html" class="block hover:text-red-400 transition duration-200">About Us</a>
+                    <a href="contact-us.html" class="block hover:text-red-400 transition duration-200">Contact</a>
+                </nav>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">Contact Info</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-red-500"></i>
+                        <span>123 IT Solutions, Tech Park, City, Country</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-red-500"></i>
+                        <a href="mailto:info@nconnect.com" class="hover:text-red-400">info@nconnect.com</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone-alt text-red-500"></i>
+                        <span>+1 234 567 890</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-red-500"></i>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-red-400">NConnect Solution</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm">
+            <p>&copy; 2024 NConnect Solution. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+    <script>
+    // JavaScript for scroll-triggered animations and carousel logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section-animate');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Observer for section animations and active navigation links
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Hamburger menu toggle logic
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        // Partner Logo Carousel Logic
+        const partnerCarousel = document.getElementById('partner-carousel');
+        const partnerCarouselItems = partnerCarousel ? partnerCarousel.querySelectorAll('.carousel-item') : [];
+        const partnerCarouselDotsContainer = document.getElementById('partner-dots');
+        const partnerCarouselDots = partnerCarouselDotsContainer ? partnerCarouselDotsContainer.querySelectorAll('.carousel-dot') : [];
+        let currentPartnerSlide = 0;
+        let partnerInterval;
+
+        function showPartnerSlide(index) {
+            if (partnerCarouselItems.length === 0) return;
+
+            partnerCarouselItems.forEach(item => {
+                item.classList.remove('active');
+                item.querySelectorAll('.logo-animate').forEach(img => img.classList.remove('is-visible'));
+            });
+            partnerCarouselDots.forEach(dot => dot.classList.remove('active'));
+
+            partnerCarouselItems[index].classList.add('active');
+            partnerCarouselDots[index].classList.add('active');
+            partnerCarouselItems[index].querySelectorAll('.logo-animate').forEach(img => img.classList.add('is-visible'));
+
+            setTimeout(() => {
+                partnerCarousel.style.height = partnerCarouselItems[index].offsetHeight + 'px';
+            }, 50);
+        }
+
+        function nextPartnerSlide() {
+            currentPartnerSlide = (currentPartnerSlide + 1) % partnerCarouselItems.length;
+            showPartnerSlide(currentPartnerSlide);
+        }
+
+        function startPartnerCarousel() {
+            if (partnerCarouselItems.length > 1) {
+                partnerInterval = setInterval(nextPartnerSlide, 3000);
+            }
+        }
+
+        function stopPartnerCarousel() {
+            clearInterval(partnerInterval);
+        }
+
+        partnerCarouselDots.forEach(dot => {
+            dot.addEventListener('click', function () {
+                stopPartnerCarousel();
+                currentPartnerSlide = parseInt(this.dataset.slide);
+                showPartnerSlide(currentPartnerSlide);
+                startPartnerCarousel();
+            });
+        });
+
+        if (partnerCarouselItems.length > 0) {
+            showPartnerSlide(currentPartnerSlide);
+            startPartnerCarousel();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // EmailJS integration
+        emailjs.init('8GPPjcdODiUdEwMb7');
+
+        const contactForm = document.getElementById('contact-form');
+        const confirmationMessage = document.getElementById('confirmation-message');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            const serviceID = 'service_vfoj3pg';
+            const templateID = 'template_aukpv3w';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    console.log('Email sent successfully!');
+                    contactForm.style.display = 'none';
+                    confirmationMessage.style.display = 'block';
+                    confirmationMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
+
+                    setTimeout(() => {
+                        confirmationMessage.style.display = 'none';
+                        contactForm.style.display = 'block';
+                        contactForm.reset();
+                        submitButton.textContent = 'SEND MESSAGE';
+                        submitButton.disabled = false;
+                    }, 5000);
+                })
+                .catch((err) => {
+                    console.error('Email failed to send:', err);
+                    confirmationMessage.style.display = 'block';
+                    confirmationMessage.textContent = 'Sorry, something went wrong. Please try again later.';
+                    confirmationMessage.classList.remove('text-green-600', 'bg-green-50');
+                    confirmationMessage.classList.add('text-red-600', 'bg-red-50');
+
+                    submitButton.textContent = 'SEND MESSAGE';
+                    submitButton.disabled = false;
+                });
+        });
+    });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
